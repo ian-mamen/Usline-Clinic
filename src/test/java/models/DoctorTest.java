@@ -16,11 +16,11 @@ public class DoctorTest {
     public void tearDown() throws Exception {
     }
 
-    @Test
-    public void getDocId() {
-        Doctor testDoctor = setupDoctor();
-        assertEquals(6, testDoctor.getDocid());
-    }
+//    @Test
+//    public void getDocId() {
+//        Doctor testDoctor = setupDoctor();
+//        assertEquals(6, testDoctor.getDocid());
+//    }
     @Test
     public void getEmail() {
         Doctor testDoctor = setupDoctor();
@@ -51,12 +51,12 @@ public class DoctorTest {
         assertEquals("male", testDoctor.getGender());
     }
 
-    @Test
-    public void getId() {
-        Doctor testDoctor = setupDoctor();
-        assertEquals("2", testDoctor.getId());
-    }
-    public Doctor setupDoctor () { return new Doctor(6,"amuga72@gmail.com", "thebest", "Ian", "Mamen","male", "" );
+//    @Test
+//    public void getId() {
+//        Doctor testDoctor = setupDoctor();
+//        assertEquals("2", testDoctor.getId());
+//    }
+    public Doctor setupDoctor () { return new  Doctor ("amuga72@gmail.com", "thebest", "Ian", "Mamen","male", "2");
 
     }
 }
