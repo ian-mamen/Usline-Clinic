@@ -7,15 +7,15 @@ import java.util.List;
 public interface LoginDao {
 
     //CREATE
-    void add(Login login);
+    void logIn(String username, String paswword);
 
     //READ
     /*List<Login> getAll();*/
-    Login findById(int id);
+//    Login findById(int id);
 
     //UPDATE
 
     //DELETE
-    void deleteById(int id);
+//    void deleteById(int id);
     /*void clearAll();*/
 }

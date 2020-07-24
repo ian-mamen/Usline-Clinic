@@ -12,9 +12,16 @@ public class Sql2oLoginDao implements LoginDao{
     public Sql2oLoginDao(Sql2o sql2o){ this.sql2o = sql2o; }
 
     @Override
+    public void logIn(String username, String password) {
+        String sql="SELECT * from userlogin WHERE  username = :username AND password =:password";
+        try(Connection con=sql2o.open()){
+            con.createQuery(sql)
+                    .executeUpdate();
+        }
+    }
     public void add(Login login) {
-        String sql = "INSERT INTO doctor (username, password, docid, patid) VALUES (:username, :password, :docid, :patid)";
-        try(Connection con = sql2o.open()){
+        String sql = "INSERT INTO userlogin(username,password, docid,patid) VALUES (:username,:password, :docid, :patid)";
+        try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(login)
                     .executeUpdate()
@@ -25,6 +32,22 @@ public class Sql2oLoginDao implements LoginDao{
         }
     }
 
+
+
+//    @Override
+//    public void add(Login login) {
+//        String sql = "INSERT INTO doctor (username, password, docid, patid) VALUES (:username, :password, :docid, :patid)";
+//        try(Connection con = sql2o.open()){
+//            int id = (int) con.createQuery(sql, true)
+//                    .bind(login)
+//                    .executeUpdate()
+//                    .getKey();
+//            login.setId(id);
+//        } catch (Sql2oException ex) {
+//            System.out.println(ex);
+//        }
+//    }
+
     /*@Override
     public List<Login> getAll() {
         try(Connection con = sql2o.open()){
@@ -33,26 +56,26 @@ public class Sql2oLoginDao implements LoginDao{
         }
     }*/
 
-    @Override
-    public Login findById(int id) {
-        try(Connection con = sql2o.open()){
-            return con.createQuery("SELECT * FROM login WHERE id = :id")
-                    .addParameter("id", id)
-                    .executeAndFetchFirst(Login.class);
-        }
-    }
+//    @Override
+//    public Login logIn(int id) {
+//        try(Connection con = sql2o.open()){
+//            return con.createQuery("SELECT * FROM login WHERE id = :id")
+//                    .addParameter("id", id)
+//                    .executeAndFetchFirst(Login.class);
+//        }
+//    }
 
-    @Override
-    public void deleteById(int id) {
-        String sql = "DELETE from login WHERE id = :id";
-        try(Connection con = sql2o.open()){
-            con.createQuery(sql)
-                    .addParameter("id", id)
-                    .executeUpdate();
-        } catch (Sql2oException ex) {
-            System.out.println(ex);
-        }
-    }
+//    @Override
+//    public void deleteById(int id) {
+//        String sql = "DELETE from login WHERE id = :id";
+//        try(Connection con = sql2o.open()){
+//            con.createQuery(sql)
+//                    .addParameter("id", id)
+//                    .executeUpdate();
+//        } catch (Sql2oException ex) {
+//            System.out.println(ex);
+//        }
+//    }
 
     /*@Override
     public void clearAll() {

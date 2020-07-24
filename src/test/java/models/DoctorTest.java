@@ -27,11 +27,11 @@ public class DoctorTest {
         assertEquals("amuga72@gmail.com", testDoctor.getEmail());
     }
 
-    @Test
-    public void getPassword() {
-        Doctor testDoctor = setupDoctor();
-        assertEquals("thebest", testDoctor.getEmail());
-    }
+//    @Test
+//    public void getPassword() {
+//        Doctor testDoctor = setupDoctor();
+//        assertEquals("thebest", testDoctor.getEmail());
+//    }
 
     @Test
     public void getFirstName() {

@@ -18,11 +18,11 @@ public class PatientTest {
 
 
 
-    @Test
-    public void getPatId() {
-        Patient testPatient = setupPatient();
-        assertEquals( 8,testPatient.getPatid());
-    }
+//    @Test
+//    public void getId() {
+//        Patient testPatient = setupPatient();
+//        assertEquals( 8,testPatient.getId());
+//    }
 
     @Test
     public void getEmail() {
@@ -30,11 +30,11 @@ public class PatientTest {
         assertEquals ("ianamuga@gmail.com", testPatient.getEmail());
     }
 
-    @Test
-    public void getPassword(){
-        Patient testPatient = setupPatient();
-        assertEquals ("everset", testPatient.getPassword());
-    }
+//    @Test
+//    public void getPassword(){
+//        Patient testPatient = setupPatient();
+//        assertEquals ("everset", testPatient.getPassword());
+//    }
 
     @Test
     public void getFirstName(){
@@ -54,7 +54,7 @@ public class PatientTest {
         assertEquals ("male", testPatient.getGender());
     }
 
-  public Patient setupPatient () { return new Patient(8, "ianamuga@gmail.com", "everset", "Bob", "Marley", "male", "");
+  public Patient setupPatient () { return new Patient("ianamuga@gmail.com", "Bob", "Marley", "male", "");
 
   }
 }

@@ -25,17 +25,17 @@ public class LoginTest {
     }
 
 
-    @Test
-    public void getDocId() {
-        Login testLogin = setupLogin();
-        assertEquals(7, testLogin.getDocid());
-    }
+//    @Test
+//    public void getDocId() {
+//        Login testLogin = setupLogin();
+//        assertEquals(7, testLogin.getDocid());
+//    }
 
-    @Test
-    public void PatId() {
-        Login testLogin = setupLogin();
-        assertEquals(9, testLogin.getPatid());
-    }
+//    @Test
+//    public void PatId() {
+//        Login testLogin = setupLogin();
+//        assertEquals(9, testLogin.getPatid());
+//    }
 
     @Test
     public void getPassword() {
